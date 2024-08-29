@@ -27,3 +27,15 @@ jobs:
           echo 'Job is running on CORE-930-build-deploy-PR'
           sleep 10
           echo 'Job is running on CORE-930-build-deploy-PR'
+  eventCheck:
+    runs-on: self-hosted
+    steps:
+    - name: Run a one-line script
+      run: |
+         if [[ "${{ github.event.name }}" == "push" ]]; then
+            echo "Current event was a push event"
+          elif [[ "${{ github.event.name }}" == "pull_request" ]]; then
+            echo "Current event was a pull request event"
+          else
+            echo "Current event was something else"
+          fi
