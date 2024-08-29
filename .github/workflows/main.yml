@@ -24,4 +24,6 @@ jobs:
     steps:
     - name: Run a one-line script
       run: |
-          echo 'This job running in MAIN branch'
+          echo 'Job is running on CORE-930-build-deploy-PR'
+          sleep 10
+          echo 'Job is running on CORE-930-build-deploy-PR'
