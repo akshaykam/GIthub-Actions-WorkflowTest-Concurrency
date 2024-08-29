@@ -25,3 +25,4 @@ jobs:
     - name: Run a one-line script
       run: |
           echo 'Job is running on CORE-930-build-deploy-PR'
+          sleep 10
