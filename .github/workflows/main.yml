@@ -4,11 +4,11 @@ name: Workflow Event check
 on:
   push:
         branches: 
-          - CORE-930-build-deploy-PR
+          - main
 
   pull_request:
         branches: 
-          - CORE-930-build-deploy-PR
+          - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,9 +24,9 @@ jobs:
     steps:
     - name: Run a one-line script
       run: |
-          echo 'Job is running on CORE-930-build-deploy-PR'
-          sleep 10
-          echo 'Job is running on CORE-930-build-deploy-PR'
+          echo 'Job is running on main'
+          sleep 40
+          echo 'Job is running on main'
   eventCheck:
     runs-on: self-hosted
     steps:
