@@ -32,9 +32,9 @@ jobs:
     steps:
     - name: Run a one-line script
       run: |
-         if [[ "${{ github.event.name }}" == "push" ]]; then
-            echo "Current event was a push event"
-          elif [[ "${{ github.event.name }}" == "pull_request" ]]; then
+         if [[ "${{ github.event_name }}" == "push" ]]; then
+            - run: echo "event name is:" ${{ github.event_name }} 
+          elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
             echo "Current event was a pull request event"
           else
             echo "Current event was something else"
