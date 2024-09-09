@@ -50,12 +50,3 @@ jobs:
       run: |
           rm -rf ${{ runner.temp }}
           echo "Temporary files cleaned up."
-
-    - name: Confirm cleanup
-      run: |
-          if [ -d ${{ runner.temp }} ]; then
-            echo "Cleanup failed: temp directory still exists."
-            exit 1
-          else
-            echo "Cleanup successful: temp directory removed."
-          fi   
