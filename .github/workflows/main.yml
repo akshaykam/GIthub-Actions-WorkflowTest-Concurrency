@@ -39,3 +39,8 @@ jobs:
           else
             echo "Current event was something else"
           fi
+
+    - name: checking temp directory
+      run: |
+       echo " printing temp directory"
+       echo ${{ runner.temp }}
