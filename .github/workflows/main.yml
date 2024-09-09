@@ -44,3 +44,17 @@ jobs:
       run: |
        echo " printing temp directory"
        echo ${{ runner.temp }}
+
+    - name: Clean up temporary files
+      run: |
+          rm -rf ${{ runner.temp }}
+          echo "Temporary files cleaned up."
+
+    - name: Confirm cleanup
+      run: |
+          if [ -d ${{ runner.temp }} ]; then
+            echo "Cleanup failed: temp directory still exists."
+            exit 1
+          else
+            echo "Cleanup successful: temp directory removed."
+          fi   
